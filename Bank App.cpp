@@ -11,10 +11,6 @@ void menu();
 void registerMenu();
 void findAccount();
 
-//THIS IS JUST A TEST
-// MORE TEST
-int test;
-
 // GLOBAL VARIABLES (in order)
 string username; // Account username
 string password; // Account password
