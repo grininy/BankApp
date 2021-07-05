@@ -26,6 +26,9 @@ string cityAddress2; // Island
 string stateAddress; // NY
 int zipAddress; // 12345
 
+// ADDITIONAL GLOBAL VARS
+double newBal;
+
 // Registration menu code
 void registerMenu() {
     bool registerSuccess = false;
@@ -72,7 +75,7 @@ void registerMenu() {
         cout << "Username: ";
         cin >> username;
 
-        ifstream usernameCheck("user_" + username + ".txt");
+        ifstream usernameCheck("Accounts\\""user_" + username + ".txt");
         if (usernameCheck.is_open()) {
             cout << "This username already exists. Create a different username.\n\n";
             Sleep(1000);
@@ -237,6 +240,7 @@ void menu() {
     system("CLS"); // Clear Console
     int choice;
     int answer;
+    double depositAmount;
     ifstream accountInfo;
     accountInfo.open("Accounts\\""user_" + username + ".txt");
     string first_name;
@@ -256,7 +260,7 @@ void menu() {
 
     system("CLS"); // CLEAR CONSOLE
 
-    ifstream accountInfoMore;
+    fstream accountInfoMore;
     accountInfoMore.open("Accounts\\""user_" + username + ".txt");
     string account;
 
@@ -281,6 +285,25 @@ void menu() {
             Sleep(3000);
             exit;
         }
+    } else if(choice == 2){
+        getline (accountInfoMore, account);
+        getline (accountInfoMore, account);
+        getline (accountInfoMore, account);
+        cout << "--------------DEPOSIT--------------\n";
+        cout << "Your balance: $" << account << endl << endl;
+        cout << "How much would you like to deposit?\nDeposit Amount: $";
+        cin >> depositAmount;
+        double updateBal = stod(account.substr());
+        newBal = updateBal + depositAmount;
+        cout << "New balance amount: $" << newBal;
+        accountInfoMore.close();
+        fstream accountInfoMore;
+        accountInfoMore.open("Accounts\\""user_" + username + ".txt");
+        getline (accountInfoMore, account);
+        getline (accountInfoMore, account);
+        double updateBal2 = updateBal;
+        double finalBal = newBal;
+        accountInfoMore << finalBal << endl;
     }
 
     accountInfoMore.close();

@@ -1,6 +1,6 @@
 grini
 test1234
-50
+0
 Mihail
 Griniuc
 3477205314
