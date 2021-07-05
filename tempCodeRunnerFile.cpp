@@ -96,7 +96,7 @@ void registerMenu() {
 
             // [START] Create Account file
             ofstream registration;
-            registration.open("user_" + username + ".txt");
+            registration.open("Accounts\\""user_" + username + ".txt");
             registration << username << endl << password << endl << balance << endl << firstName << endl << lastName << endl << phoneNumber << endl << houseAddress + " " + houseAddress2 + " " + houseAddress3 << endl << cityAddress + " " + cityAddress2 << endl << stateAddress << endl << zipAddress;
             registration.close();
             // [FINISH] Create Username file
@@ -136,7 +136,7 @@ void login() {
             cin >> password;
 
         ifstream registration;
-        registration.open("user_" + username + ".txt");
+        registration.open("Accounts\\""user_" + username + ".txt");
 
         if(registration.is_open()){
             string login;
@@ -170,7 +170,7 @@ void findAccount() {
     cout << "\n--------------------------------\n\n";
 
     ifstream registration;
-    registration.open("user_" + username + ".txt");
+    registration.open("Accounts\\""user_" + username + ".txt");
     if (registration.is_open()) {
         string account;
         getline(registration, account);
@@ -238,7 +238,7 @@ void menu() {
     int choice;
     int answer;
     ifstream accountInfo;
-    accountInfo.open("user_" + username + ".txt");
+    accountInfo.open("Accounts\\""user_" + username + ".txt");
     string first_name;
     getline (accountInfo, first_name);
     getline (accountInfo, first_name);
@@ -257,7 +257,7 @@ void menu() {
     system("CLS"); // CLEAR CONSOLE
 
     ifstream accountInfoMore;
-    accountInfoMore.open("user_" + username + ".txt");
+    accountInfoMore.open("Accounts\\""user_" + username + ".txt");
     string account;
 
     if(choice == 1){
@@ -276,6 +276,10 @@ void menu() {
             cout << "Logging you out in 5 seconds...\n";
             Sleep(5000);
             mainMenu();
+        } else {
+            cout << "ERROR \t You must enter 1 or 2 to continue. Closing application...\n";
+            Sleep(3000);
+            exit;
         }
     }
 
