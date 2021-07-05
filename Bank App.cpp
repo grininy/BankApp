@@ -72,7 +72,7 @@ void registerMenu() {
         cout << "Username: ";
         cin >> username;
 
-        ifstream usernameCheck("user_" + username + ".txt");
+        ifstream usernameCheck("Accounts\\""user_" + username + ".txt");
         if (usernameCheck.is_open()) {
             cout << "This username already exists. Create a different username.\n\n";
             Sleep(1000);
