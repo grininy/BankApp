@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 grini
 test1234
 50
@@ -8,15 +7,3 @@ Griniuc
 24 Jason Ct
 Staten Island
 NY
-=======
-grini
-test1234
-50
-Mihail
-Griniuc
-3477205314
-24 Jason Ct
-Staten Island
-NY
->>>>>>> baab8a67de06afb3054eb9eb1d9b2b42b8c2a900
-10306

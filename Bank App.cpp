@@ -236,15 +236,16 @@ void mainMenu() {
 void menu() {
     system("CLS"); // Clear Console
     int choice;
-    ifstream registration;
-    registration.open("user_" + username + ".txt");
+    int answer;
+    ifstream accountInfo;
+    accountInfo.open("user_" + username + ".txt");
     string first_name;
-    getline (registration, first_name);
-    getline (registration, first_name);
-    getline (registration, first_name);
-    getline (registration, first_name);
+    getline (accountInfo, first_name);
+    getline (accountInfo, first_name);
+    getline (accountInfo, first_name);
+    getline (accountInfo, first_name);
     cout << "Welcome, " << first_name << endl << endl;
-    registration.close();
+    accountInfo.close();
     cout << "What action would you like to do?" << endl;
     cout << "1) View Balance" << endl;
     cout << "2) Deposit" << endl;
@@ -252,8 +253,33 @@ void menu() {
     cout << "4) Logout" << endl << endl;
     cout << "Type the number of your choice: ";
     cin >> choice;
-    system("PAUSE");
 
+    system("CLS"); // CLEAR CONSOLE
+
+    ifstream accountInfoMore;
+    accountInfoMore.open("user_" + username + ".txt");
+    string account;
+
+    if(choice == 1){
+        getline (accountInfoMore, account);
+        getline (accountInfoMore, account);
+        getline (accountInfoMore, account);
+        cout << "Your balance: $" << account;
+        cout << endl << endl;
+        cout << "1. Back" << endl;
+        cout << "2. Logout" << endl;
+        cin >> answer;
+        system("CLS"); // CLEAR CONSOLE
+        if(answer == 1){
+            menu();
+        } else if (answer == 2){
+            cout << "Logging you out in 5 seconds...\n";
+            Sleep(5000);
+            mainMenu();
+        }
+    }
+
+    accountInfoMore.close();
 }
 
 // Main function
