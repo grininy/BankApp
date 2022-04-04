@@ -18,9 +18,9 @@ double balance; // Account balance
 string firstName; // Ben
 string lastName; // Dover
 string phoneNumber; // 8880007777
-string houseAddress; // 24
-string houseAddress2; // Jason
-string houseAddress3; // Ct
+string houseAddress; // 
+string houseAddress2; // 
+string houseAddress3; // 
 string cityAddress; // Staten
 string cityAddress2; // Island
 string stateAddress; // NY
