@@ -28,7 +28,7 @@ int zipAddress; // 12345
 
 // ADDITIONAL GLOBAL VARS
 double newBal;
-a
+
 // Registration menu code
 void registerMenu() {
     bool registerSuccess = false;
